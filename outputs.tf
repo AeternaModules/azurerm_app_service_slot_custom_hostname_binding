@@ -1,3 +1,7 @@
+output "app_service_slot_custom_hostname_bindings_id" {
+  description = "Map of id values across all app_service_slot_custom_hostname_bindings, keyed the same as var.app_service_slot_custom_hostname_bindings"
+  value       = { for k, v in azurerm_app_service_slot_custom_hostname_binding.app_service_slot_custom_hostname_bindings : k => v.id }
+}
 output "app_service_slot_custom_hostname_bindings_app_service_slot_id" {
   description = "Map of app_service_slot_id values across all app_service_slot_custom_hostname_bindings, keyed the same as var.app_service_slot_custom_hostname_bindings"
   value       = { for k, v in azurerm_app_service_slot_custom_hostname_binding.app_service_slot_custom_hostname_bindings : k => v.app_service_slot_id }
